@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  run_tests:
+    image: exercise5
+    volumes:
+      - ./local_dir:/remote_dir
+    working_dir: /local_dir/
+    command: pytest
+    env_file: .env
+  run_example:
+    image: exercise5
+    volumes:
+      - ./local_dir:/remote_dir
+    working_dir: /local_dir/
+    command: ./methode.py
+    env_file: .env
